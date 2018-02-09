@@ -1,0 +1,16 @@
+
+.header {
+  width: 100%;
+  height: 115px;
+  background: black;
+  position: fixed;
+}
+
+.header img {
+  width: 200px;
+  float: left;
+}
+
+.header .main-menu {
+  float: left;
+}
