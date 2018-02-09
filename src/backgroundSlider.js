@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { typeOfActions } from './store/actions';
+import store from './store/store';
 import './css/slider.css';
 
 import background1 from './img/background/background1.jpg';
@@ -11,26 +13,33 @@ class BackgroundSlider extends Component {
     super(props);
     this.setInterval = this.setInterval.bind(this);
     this.state = {
-      i: 0,
+      viewport: store.viewport,
+      index: 0,
       bg: [
         background1,
         background2,
         background3,
         background4
-      ]
+      ],
     };
   }
   componentDidMount() {
+    store.on(
+      typeOfActions.CHANGE_VIEWPORT,
+      () => this.setState(
+        { ...store.viewport }
+      )
+    );
     this.setInterval();
   }
   setInterval() {
     const time = 6000;
     let action = () => {
-      let { i, bg } = this.state;
-      if (i === bg.length-1)
-        this.setState({i: 0});
+      let { index, bg } = this.state;
+      if (index === bg.length-1)
+        this.setState({index: 0});
       else
-        this.setState({i: i+1});
+        this.setState({index: index+1});
     };
     setInterval(
       action,
@@ -39,11 +48,33 @@ class BackgroundSlider extends Component {
   }
   render() {
     console.log('rerender');
-    const { i, bg } = this.state;
-    return <div className="backgroundSlider-container">
-      <div />
-      
-      <img src={bg[i]} alt="background"/>
+    const { index, bg } = this.state;
+    const { viewport } = store;
+
+    const propsContainer = {
+      className: 'slider',
+      style: {
+        width: viewport.width,
+        height: viewport.height
+      }
+    };
+
+    return <div {...propsContainer}>
+      {bg.map( (el, i) => {
+        const propsImg = {
+          className: 'img',
+          alt: 'background',
+          key: `img${i}`,
+          src: el,
+          style: {
+            ...propsContainer.style,
+            opacity: i > index
+              ? 0
+              : 1
+          }
+        };
+        return <img {...propsImg} />;
+      })}
     </div>;
   }
 }
