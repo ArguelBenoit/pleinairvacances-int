@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { typeOfActions } from './store/actions';
-import store from './store/store';
 import './css/slider.css';
+// import { typeOfActions } from './store/actions';
+// import store from './store/store';
 
 import background1 from './img/background/background1.jpg';
 import background2 from './img/background/background2.jpg';
@@ -13,23 +13,23 @@ class BackgroundSlider extends Component {
     super(props);
     this.setInterval = this.setInterval.bind(this);
     this.state = {
-      viewport: store.viewport,
+      // viewport: store.viewport,
       index: 0,
       bg: [
         background1,
         background2,
         background3,
         background4
-      ],
+      ]
     };
   }
   componentDidMount() {
-    store.on(
-      typeOfActions.CHANGE_VIEWPORT,
-      () => this.setState(
-        { ...store.viewport }
-      )
-    );
+    // store.on(
+    //   typeOfActions.CHANGE_VIEWPORT,
+    //   () => this.setState(
+    //     { ...store.viewport }
+    //   )
+    // );
     this.setInterval();
   }
   setInterval() {
@@ -47,34 +47,38 @@ class BackgroundSlider extends Component {
     );
   }
   render() {
-    console.log('rerender');
+    // console.log('rerender');
     const { index, bg } = this.state;
-    const { viewport } = store;
 
-    const propsContainer = {
-      className: 'slider',
-      style: {
-        width: viewport.width,
-        height: viewport.height
-      }
-    };
-
-    return <div {...propsContainer}>
+    return <div className="slider">
       {bg.map( (el, i) => {
         const propsImg = {
           className: 'img',
-          alt: 'background',
           key: `img${i}`,
-          src: el,
           style: {
-            ...propsContainer.style,
             opacity: i > index
               ? 0
-              : 1
+              : 1,
+            background: `url( ${bg[i]} ) center center fixed` // with RestApi use absolute url.
           }
         };
-        return <img {...propsImg} />;
+        return <div {...propsImg} />;
       })}
+      <div className="buttons-container">
+        {bg.map( (el, i) => {
+          const propsImg = {
+            className: 'button',
+            key: `button${i}`,
+            style: {
+              background: index === i
+                ? 'white'
+                : 'transparent'
+            },
+            onClick: () => this.setState({index: i})
+          };
+          return <div {...propsImg} />;
+        })}
+      </div>
     </div>;
   }
 }
