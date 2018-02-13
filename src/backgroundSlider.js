@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/slider.css';
+// import store from './store/store';
 
 import background1 from './img/background/background1.jpg';
 import background2 from './img/background/background2.jpg';

@@ -1,0 +1,43 @@
+
+.left-panel ul.main-menu,
+.left-panel ul.second-menu {
+  padding: 15px 0 30px 15px;
+  font-size: 18px;
+  font-family: 'muli';
+  font-weight: 900;
+}
+.left-panel ul.main-menu {
+  border-bottom: 1px solid #ddd;
+  color: #ff8d00;
+}
+.left-panel ul.second-menu {
+  color: #3ac9ff;
+}
+.left-panel .main-menu .li-lvl-1,
+.left-panel .second-menu .li-lvl-1 {
+  padding: 10px 0;
+  list-style: none;
+}
+.left-panel .li-lvl-1 i {
+  margin-right: 10px;
+  color: black;
+}
+.left-panel .li-lvl-1 i.nos-destinations { transform: rotate(-45deg) }
+.left-panel .li-lvl-1 i.nos-promotions { transform: rotate(90deg) }
+.left-panel .li-lvl-1 i.fa-chevron-up {
+  float: right;
+  margin-right: 17px;
+  padding: 3px;
+}
+.left-panel .ul-lvl-2 {
+  margin-top: 15px;
+  padding-left: 32px;
+  transition-duration: 400ms;
+  overflow: hidden;
+}
+.left-panel .li-lvl-2 {
+  padding: 5px 0;
+  color: black;
+  font-size: 15px;
+  list-style: none;
+}

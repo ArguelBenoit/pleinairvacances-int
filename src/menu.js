@@ -135,8 +135,8 @@ export const menu = [
       }
     ]
   }, {
-    name: 'Nos Séjours à la carte',
-    className: 'nos-sejours-a-la-carte',
+    name: 'Séjours à la carte',
+    className: 'sejours-a-la-carte',
     link: '',
     icon: 'far fa-map',
     subMenu: [
