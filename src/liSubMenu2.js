@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import LiSubMenu3 from './liSubMenu3';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
 
 
 class LiSubMenu2 extends Component {
@@ -27,7 +26,7 @@ class LiSubMenu2 extends Component {
     const propsSubUl = {
       style: open
         ? {
-          height: sub.length*35 + 15,
+          height: 10 + sub.length*27 + 14,
           opacity: 1
         } : {
           height: 0,

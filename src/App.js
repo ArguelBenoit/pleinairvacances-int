@@ -3,6 +3,8 @@ import Header from './header';
 import BackgroundSlider from './backgroundSlider';
 import FakeSection from './fakeSection.js';
 import { Actions } from './store/actions.js';
+import store from './store/store';
+import LeftPanel from './leftPanel';
 
 
 class App extends Component {
@@ -29,6 +31,10 @@ class App extends Component {
       <Header />
       <BackgroundSlider />
       <FakeSection />
+      {store.viewport.width < 1360
+        ? <LeftPanel />
+        : ''
+      }
     </div>;
   }
 }

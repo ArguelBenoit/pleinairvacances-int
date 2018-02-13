@@ -18,6 +18,11 @@ AppDispatcher.register((action) => {
       store.scroll = action.scroll;
       break;
 
+    case typeOfActions.LEFT_PANEL:
+      store.emit(typeOfActions.LEFT_PANEL);
+      store.leftPanel = !store.leftPanel;
+      break;
+
     default:
       break;
   }

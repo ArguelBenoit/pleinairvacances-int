@@ -1,0 +1,36 @@
+
+.header-small {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 1;
+  transition-duration: 600ms;
+}
+.header-small img {
+  float: right;
+  width: 105px;
+  margin-right: 10px;
+}
+.header-small .container-menu {
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  float: left;
+  transition-duration: 600ms;
+  margin-left: 20px;
+}
+.header-small .container-menu .child {
+  position: absolute;
+  top: 28px;
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+  transition-duration: 400ms;
+}
+.header-small .container-menu .child.one { transform: translateY(-10px) }
+.header-small .container-menu .child.two { transform: translateY(0px) }
+.header-small .container-menu .child.three { transform: translateY(10px) }
+
+.header-small .container-menu.actived .child.one { transform: translateY(0px) rotate(225deg) }
+.header-small .container-menu.actived .child.two { opacity: 0 }
+.header-small .container-menu.actived .child.three { transform: translateY(0px) rotate(-225deg) }

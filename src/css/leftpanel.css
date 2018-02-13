@@ -1,0 +1,14 @@
+
+.left-panel {
+  position: fixed;
+  width: 280px;
+  min-height: 100%;
+  background: #eee;
+  z-index: 1;
+  top: 0px;
+  left: -280px;
+  transition-duration: 600ms;
+}
+.left-panel.actived {
+  left: 0px;
+}

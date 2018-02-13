@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import logo from './img/logo_transparent.png';
 import './css/header.css';
+import './css/menu.css';
+import './css/menu2.css';
+import './css/menu3.css';
 import { typeOfActions } from './store/actions';
 import store from './store/store';
 import LiSubMenu1 from './liSubMenu1';
 import { menu } from './menu';
+import { Actions } from './store/actions.js';
 
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.resize = this.resize.bind(this);
     this.state = {
       scroll: window.scrollY,
-      viewport: store.viewport // viewport: {height: X, width: X}
+      viewport: store.viewport,
+      small: store.viewport.width < 1360
+        ? true
+        : false,
+      menuActived: false
     };
   }
   componentDidMount() {
@@ -23,46 +32,73 @@ class Header extends Component {
         );
       }
     );
-    store.on(
-      typeOfActions.CHANGE_VIEWPORT,
-      () => {
-        this.setState(
-          {viewport: store.viewport}
-        );
-      }
-    );
+    store.on(typeOfActions.CHANGE_VIEWPORT, this.resize);
+  }
+  resize() {
+    if (this.state.viewport.width > 1360)
+      this.setState({ viewport: store.viewport, small: false });
+    else
+      this.setState({ viewport: store.viewport, small: true });
   }
   render() {
     const {
       scroll,
-      viewport
+      viewport,
+      small,
+      menuActived
     } = this.state;
-    const propsHeader = {
-      className: 'header',
+    const propsHeaderBig = {
+      className: 'header-big',
       style: {
-        background: scroll < 300
-          ? 'transparent'
-          : 'rgba(255,255,255,0.8)',
-        width: scroll < 300 // in futur && section isn´t hp
-          ? viewport.width + 170
-          : viewport.width,
-        left: scroll < 300 // in futur && section isn´t hp
-          ? -170
-          : 0
+        background: scroll < 300 ? 'transparent' : 'rgba(255,255,255,0.8)',
+        width: scroll < 300 ? viewport.width + 170 : viewport.width,
+        left: scroll < 300 ? -170 : 0
       }
     };
-    return <div {...propsHeader}>
-      <img src={logo} alt="logo, plein air vacances"/>
-      <ul className="main-menu">
-        {menu.map( (el, i) => {
-          return <LiSubMenu1 key={'firstLi' + i} scroll={scroll} subClassName={el.className} icon={el.icon} txt={el.name} sub={el.subMenu} />;
-        })}
-      </ul>
-      <ul className="second-menu">
-        <LiSubMenu1 scroll={scroll} icon="fas fa-user" />
-        <LiSubMenu1 scroll={scroll} icon="fas fa-users" />
-      </ul>
-    </div>;
+    const propsHeaderSmall = {
+      className: 'header-small',
+      onClick: () => {
+        this.setState({menuActived: !menuActived});
+        Actions.leftPanel();
+      },
+      style: {
+        background: scroll < 150 || menuActived ? 'transparent' : 'rgba(255,255,255,0.8)',
+        width: scroll < 150 ? viewport.width + 105 : viewport.width,
+        left: menuActived ? '280px' : 0
+      }
+    };
+    const styleChildMenu = { background: scroll < 150 ? 'white' : '#333' };
+    if (small) {
+      return <div {...propsHeaderSmall}>
+        <div className={`container-menu ${menuActived ? ' actived' : '' }`}>
+          <div style={styleChildMenu} className="child one"/>
+          <div style={styleChildMenu} className="child two"/>
+          <div style={styleChildMenu} className="child three"/>
+        </div>
+        <img src={logo} alt="logo, plein air vacances" ref="logo"/>
+      </div>;
+    } else {
+      return <div {...propsHeaderBig}>
+        <img src={logo} alt="logo, plein air vacances" ref="logo"/>
+        <ul className="main-menu" ref="mainMenu">
+          {menu.map( (el, i) => {
+            const propsSubMenu = {
+              key: 'firstLi' + i,
+              scroll: scroll,
+              subClassName: el.className,
+              icon: el.icon,
+              txt: el.name,
+              sub: el.subMenu
+            };
+            return <LiSubMenu1 {...propsSubMenu} />;
+          })}
+        </ul>
+        <ul className="second-menu" ref="secondMenu">
+          <LiSubMenu1 scroll={scroll} icon="fas fa-user" />
+          <LiSubMenu1 scroll={scroll} icon="fas fa-users" />
+        </ul>
+      </div>;
+    }
   }
 }
 

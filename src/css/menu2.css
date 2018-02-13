@@ -1,0 +1,6 @@
+
+.header-big .second-menu li:nth-of-type(1) { padding-right: 50px }
+.header-big .second-menu li {
+  float: right;
+  padding: 40px 40px 40px 0px
+}
