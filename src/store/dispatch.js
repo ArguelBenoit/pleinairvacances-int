@@ -15,7 +15,7 @@ AppDispatcher.register((action) => {
 
     case typeOfActions.CHANGE_SCROLL:
       store.emit(typeOfActions.CHANGE_SCROLL);
-      store.viewport.scroll = action.scroll;
+      store.scroll = action.scroll;
       break;
 
     default:

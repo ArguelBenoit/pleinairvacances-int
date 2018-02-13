@@ -6,7 +6,7 @@ let init = {
     width: window.innerWidth,
     height: window.innerHeight
   },
-  scroll: 0
+  scroll: window.scrollY
 };
 
 var store = _.assign(

@@ -1,16 +1,79 @@
 
 .header {
-  width: 100%;
-  height: 115px;
-  background: black;
+  transition-duration: 300ms;
+  height: 100px;
   position: fixed;
+  z-index: 1
 }
-
 .header img {
-  width: 200px;
-  float: left;
+  width: 170px;
+  float: left
 }
 
-.header .main-menu {
+
+.header ul {
+  text-align: left;
+  padding: 0 0;
+  margin: 0 0;
+  font-size: 20px;
+  font-family: 'Muli Black'
+}
+.header li {
+  transition-duration: 400ms;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer
+}
+
+
+.header .second-menu li:nth-of-type(1) { padding-right: 50px }
+.header .second-menu li {
+  float: right;
+  padding: 40px 40px 40px 0px
+}
+
+
+/* main-menu level 1 */
+.header .main-menu .li-lvl-1 {
   float: left;
+  padding: 37px 0px 37px 40px;
+}
+.header .main-menu .li-lvl-1 i { margin-right: 8px }
+.header i.nos-destinations { transform: rotate(-45deg) }
+.header i.nos-promotions { transform: rotate(90deg) }
+
+
+/* main-menu level 2 */
+.header .main-menu .sub-menu-1 {
+  margin-top: 32px;
+  animation: show-submenu-1 300ms;
+}
+@keyframes show-submenu-1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  } 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.header .main-menu .fake-arrow {
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg) translateX(40px) translateY(-23px);
+  background: white;
+  z-index: 0;
+}
+.header .main-menu .ul-lvl-2 {
+  z-index: 1;
+  background: white;
+  font-size: 14px;
+  padding: 10px;
+  box-shadow: 0 0 4px rgba(100,100,100,0.25);
+}
+.header .main-menu .li-lvl-2 {
+  padding: 5px 0;
+}
+.header .main-menu .li-lvl-2 i.fa-chevron-up {
+  float: right
 }

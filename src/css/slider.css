@@ -1,27 +1,30 @@
 
 .slider {
   height: 100vh;
-  width: 100vw;
+  width: 100%
 }
+
 .slider .img {
   transition-duration: 450ms;
   position: absolute;
   height: 100vh;
-  width: 100vw;
-  background-size: cover;
+  width: 100%;
+  background-size: cover
 }
+
 .slider .buttons-container {
   position: absolute;
   bottom: 30px;
-  left: 30px;
+  left: 30px
 }
+
 .slider .buttons-container .button {
   cursor: pointer;
   transition-duration: 50ms;
   border: 2px solid white;
   float: left;
-  width: 15px;
-  height: 15px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 8px
 }

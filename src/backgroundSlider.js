@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './css/slider.css';
-// import { typeOfActions } from './store/actions';
-// import store from './store/store';
 
 import background1 from './img/background/background1.jpg';
 import background2 from './img/background/background2.jpg';
@@ -13,7 +11,6 @@ class BackgroundSlider extends Component {
     super(props);
     this.setInterval = this.setInterval.bind(this);
     this.state = {
-      // viewport: store.viewport,
       index: 0,
       bg: [
         background1,
@@ -24,12 +21,6 @@ class BackgroundSlider extends Component {
     };
   }
   componentDidMount() {
-    // store.on(
-    //   typeOfActions.CHANGE_VIEWPORT,
-    //   () => this.setState(
-    //     { ...store.viewport }
-    //   )
-    // );
     this.setInterval();
   }
   setInterval() {
@@ -47,9 +38,7 @@ class BackgroundSlider extends Component {
     );
   }
   render() {
-    // console.log('rerender');
     const { index, bg } = this.state;
-
     return <div className="slider">
       {bg.map( (el, i) => {
         const propsImg = {

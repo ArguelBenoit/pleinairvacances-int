@@ -13,9 +13,9 @@ export var Actions = {
       height
     });
   },
-  loadActivity(scroll) {
+  changeScroll(scroll) {
     AppDispatcher.dispatch({
-      actionType: typeOfActions.LOAD_ACTIVITY,
+      actionType: typeOfActions.CHANGE_SCROLL,
       scroll
     });
   }
