@@ -55,14 +55,7 @@ class Header extends Component {
       <img src={logo} alt="logo, plein air vacances"/>
       <ul className="main-menu">
         {menu.map( (el, i) => {
-          return <LiSubMenu1
-                  key={'firstLi' + i}
-                  scroll={scroll}
-                  subClassName={el.className}
-                  icon={el.icon}
-                  txt={el.name}
-                  sub={el.subMenu}
-                />;
+          return <LiSubMenu1 key={'firstLi' + i} scroll={scroll} subClassName={el.className} icon={el.icon} txt={el.name} sub={el.subMenu} />;
         })}
       </ul>
       <ul className="second-menu">

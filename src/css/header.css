@@ -39,11 +39,11 @@
   padding: 37px 0px 37px 40px;
 }
 .header .main-menu .li-lvl-1 i { margin-right: 8px }
-.header i.nos-destinations { transform: rotate(-45deg) }
-.header i.nos-promotions { transform: rotate(90deg) }
+.header .main-menu i.nos-destinations { transform: rotate(-45deg) }
+.header .main-menu i.nos-promotions { transform: rotate(90deg) }
 
 
-/* main-menu level 2 */
+/* main-menu sub level */
 .header .main-menu .sub-menu-1 {
   margin-top: 32px;
   animation: show-submenu-1 300ms;
@@ -57,6 +57,11 @@
     transform: scale(1);
   }
 }
+.header .main-menu .ul-lvl-3 {
+  transition-duration: 400ms;
+  overflow: hidden;
+}
+
 .header .main-menu .fake-arrow {
   width: 20px;
   height: 20px;
@@ -67,12 +72,23 @@
 .header .main-menu .ul-lvl-2 {
   z-index: 1;
   background: white;
-  font-size: 14px;
   padding: 10px;
   box-shadow: 0 0 4px rgba(100,100,100,0.25);
 }
 .header .main-menu .li-lvl-2 {
   padding: 5px 0;
+  color: #333;
+  font-size: 14px;
+}
+.header .main-menu .li-lvl-3:first-child {
+  padding-top: 20px;
+}
+.header .main-menu .li-lvl-3 {
+  padding: 5px 0;
+  color: #666;
+  font-size: 12px;
+  margin-left: 20px;
+  padding: 10px 0
 }
 .header .main-menu .li-lvl-2 i.fa-chevron-up {
   float: right
