@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './css/slider.css';
-// import store from './store/store';
+import './css/background-slider.css';
+import store from './store/store';
 
 import background1 from './img/background/background1.jpg';
 import background2 from './img/background/background2.jpg';
@@ -54,7 +54,7 @@ class BackgroundSlider extends Component {
         };
         return <div {...propsImg} />;
       })}
-      <div className="buttons-container">
+      <div className="buttons-container" style={{display: store.viewport.width > 850 ? 'inherit' : 'none'}}>
         {bg.map( (el, i) => {
           const propsImg = {
             className: 'button',

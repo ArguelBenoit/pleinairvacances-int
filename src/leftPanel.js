@@ -20,22 +20,24 @@ class LeftPanel extends Component {
   render() {
     const { actived } = this.state;
     return <div className={`left-panel ${actived ? ' actived' : ''}`}>
-      <ul className="main-menu">
-        {menu.map( (el, i) => {
-          const propsSubMenu = {
-            key: 'firstLiMobil' + i,
-            subClassName: el.className,
-            icon: el.icon,
-            txt: el.name,
-            sub: el.subMenu
-          };
-          return <LiSubMenu1Mobil {...propsSubMenu} />;
-        })}
-      </ul>
-      <ul className="second-menu">
-        <LiSubMenu1Mobil icon="fas fa-users" txt="Espace CE" />
-        <LiSubMenu1Mobil icon="fas fa-user" txt="Mon compte" />
-      </ul>
+      <div >
+        <ul className="main-menu">
+          {menu.map( (el, i) => {
+            const propsSubMenu = {
+              key: 'firstLiMobil' + i,
+              subClassName: el.className,
+              icon: el.icon,
+              txt: el.name,
+              sub: el.subMenu
+            };
+            return <LiSubMenu1Mobil {...propsSubMenu} />;
+          })}
+        </ul>
+        <ul className="second-menu">
+          <LiSubMenu1Mobil icon="fas fa-users" txt="Espace CE" />
+          <LiSubMenu1Mobil icon="fas fa-user" txt="Mon compte" />
+        </ul>
+      </div>
     </div>;
   }
 }
