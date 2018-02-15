@@ -52,7 +52,7 @@ const ArrowSlider = (props) => {
 ArrowSlider.propTypes = {
   txt: PropTypes.string,
   side: PropTypes.string,
-  size: PropTypes.number
+  size: PropTypes.string
 };
 
 export default ArrowSlider;

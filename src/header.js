@@ -57,20 +57,23 @@ class Header extends Component {
     };
     const propsHeaderSmall = {
       className: 'header-small',
-      onClick: () => {
-        this.setState({menuActived: !menuActived});
-        Actions.leftPanel();
-      },
       style: {
         background: scroll < 150 || menuActived ? 'transparent' : 'rgba(255,255,255,0.8)',
         width: scroll < 150 ? viewport.width + 105 : viewport.width,
         left: menuActived ? '280px' : 0
       }
     };
+    const propsButton = {
+      onClick: () => {
+        this.setState({menuActived: !menuActived});
+        Actions.leftPanel();
+      },
+      className: `container-menu ${menuActived ? ' actived' : '' }`
+    };
     const styleChildMenu = { background: scroll < 150 ? 'white' : '#333' };
     if (small) {
       return <div {...propsHeaderSmall}>
-        <div className={`container-menu ${menuActived ? ' actived' : '' }`}>
+        <div {...propsButton}>
           <div style={styleChildMenu} className="child one"/>
           <div style={styleChildMenu} className="child two"/>
           <div style={styleChildMenu} className="child three"/>

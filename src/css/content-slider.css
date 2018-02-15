@@ -16,7 +16,6 @@
 
 
 
-
 .container-arrow-slider {
   position: absolute;
   top: 48vh;
@@ -24,8 +23,8 @@
 }
 .container-arrow-slider.mob {
   top: inherit;
-  bottom: 70px;
-  font-size: 15px;
+  bottom: 55px;
+  font-size: 12px;
 }
 .container-arrow-slider .arrow-slider {
   color: white;
@@ -38,14 +37,33 @@
   padding: 6px;
 }
 .container-arrow-slider.mob .arrow-slider i {
-  font-size: 34px;
+  padding: 3px;
+  font-size: 30px;
 }
 
 
 
 
 
-
+.timer-desktop {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  font-size: 30px;
+  color: white;
+  font-weight: 900;
+  font-family: 'muli';
+}
+.timer-mobile {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 20px;
+  font-size: 20px;
+  color: white;
+  font-weight: 900;
+  font-family: 'muli';
+}
 .main-section {
   width: 100%;
   margin-top: 50vh;
