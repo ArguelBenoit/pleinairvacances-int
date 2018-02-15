@@ -12,20 +12,21 @@ import Footer from './footer';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loading: true
+    };
+    this.removeFrame = this.removeFrame.bind(this);
+  }
   componentDidMount() {
-    this.loading = true;
-    this.loadEnd = false;
     window.addEventListener('load', () => {
       Actions.changeViewport(
         this.container.clientWidth,
         window.innerHeight
       );
       Actions.changeScroll(window.scrollY);
-      this.loading = false;
-      setTimeout(() => {
-        this.loadEnd = true;
-        this.forceUpdate();
-      }, 1000);
+      this.removeFrame();
     });
     window.addEventListener('resize', () => {
       Actions.changeViewport(
@@ -38,24 +39,29 @@ class App extends Component {
     });
     store.on(typeOfActions.CHANGE_VIEWPORT, () => this.forceUpdate());
   }
+  removeFrame() {
+    setTimeout(
+      () => { this.setState({loading: false}); }
+      , 600
+    );
+  }
   render() {
-    const propsloaderScreen = {
+    const { loading } = this.state;
+    const propsFrame = {
       id: 'loading-frame',
       style: {
         position: 'fixed',
         zIndex: 10,
         width: '100%',
         height: '100%',
-        background: '#fff',
+        background: '#eee',
+        opacity: loading ? 1 : 0,
         transitionDuration: '1000ms',
-        opacity: this.loading ? 0 : 1
+        pointerEvents: !loading ? 'none' : 'inherit'
       }
     };
     return <div style={{width: '100%'}} ref={container => this.container = container} >
-      {!this.loadEnd
-        ? <div {...propsloaderScreen} />
-        : ''
-      }
+      <div {...propsFrame} />
       <Header />
       <BackgroundSlider />
       <ContentSlider />

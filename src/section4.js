@@ -46,7 +46,7 @@ const Section4 = () => {
       <div className="row main-row">
         <div className="row main-row">
           {reasons.map((el,i) => {
-            return <div className="line" style={{marginLeft: i*30 + 'px'}}>
+            return <div key={i} className="line" style={{marginLeft: i*30 + 'px'}}>
               <i className={el.icon} />
               {el.txt}
             </div>;
