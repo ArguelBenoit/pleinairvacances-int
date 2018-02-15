@@ -1,36 +1,63 @@
 
-
-
-.content-slider {
+.frame-slider {
   position: absolute;
   top: 0;
-  width: 200%;
   height: 100vh;
   overflow: hidden;
-  /* pointer-events: none; */
 }
-.content-slider section {
+.frame-slider section {
   float: left;
+  height: 100vh;
 }
-.content-slider section .arrow-slider {
-  position: absolute;
+.container-section {
+  transition-duration: 600ms;
+  height: 100vh;
 }
 
-/* section hp */
-.content-slider .container-first-section {
-  width: 100%;
+
+
+
+.container-arrow-slider {
+  position: absolute;
+  top: 48vh;
+  font-size: 18px;
 }
-.content-slider .container-first-section .container-logo-img {
+.container-arrow-slider.mob {
+  top: inherit;
+  bottom: 70px;
+  font-size: 15px;
+}
+.container-arrow-slider .arrow-slider {
+  color: white;
+  position: absolute;
+  cursor: pointer;
+  font-weight: 900;
+}
+.container-arrow-slider .arrow-slider i {
+  font-size: 40px;
+  padding: 6px;
+}
+.container-arrow-slider.mob .arrow-slider i {
+  font-size: 34px;
+}
+
+
+
+
+
+
+.main-section {
+  width: 100%;
+  margin-top: 50vh;
+  transform: translateY(-140px);
+}
+.main-section .container-logo-img {
   width: 280px;
   height: 160px;
   margin: auto;
 }
-.content-slider .container-first-section {
-  margin-top: 50vh;
-  transform: translateY(-140px);
-}
-.content-slider .container-first-section h1 span { color: #ff8d00 }
-.content-slider .container-first-section h1 {
+.main-section h1 span { color: #ff8d00 }
+.main-section h1 {
   text-align: center;
   color: white;
   font-size: 'muli';
@@ -38,33 +65,10 @@
   text-shadow: 0 0 2px rgba(0,0,0,0.4);
   padding: 0 15px;
 }
-.content-slider .container-first-section .div-border {
+.main-section .div-border {
   transform: translateY(30px);
   width: 80px;
   height: 4px;
   margin: auto;
   background: #3ac9ff;
 }
-
-
-/* slider */
-.content-slider .container-arrow-slider {
-  width: 100%;
-  position: absolute;
-  top: 48vh;
-}
-.content-slider .container-arrow-slider .arrow-slider {
-  color: white;
-  width: 160px;
-  position: absolute;
-  font-size: 18px;
-  font-weight: 900;
-}
-.content-slider .container-arrow-slider .arrow-slider div { width: 120px }
-.content-slider .container-arrow-slider .arrow-slider i {
-  font-size: 30px;
-  padding: 6px;
-}
-
-
-/* section map */

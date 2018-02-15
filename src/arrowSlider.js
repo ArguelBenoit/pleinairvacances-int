@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Actions } from './store/actions';
+
 
 const ArrowSlider = (props) => {
-  const { txt, side } = props;
+  const { txt, side, size } = props;
   const propsContent = {
     className: `arrow-slider ${side}`,
     style: side === 'right'
       ? {
-        paddingRight: '20px',
+        paddingRight: '15px',
         right: 0
       } : {
-        paddingLeft: '20px',
+        paddingLeft: '15px',
         left: 0
-      }
+      },
+    onClick: () => Actions.switchPanel(side)
   };
   const propsI = {
     className: 'fas fa-chevron-up',
@@ -28,9 +31,11 @@ const ArrowSlider = (props) => {
   const propsTxt = {
     style: side === 'right'
       ? {
+        width: `${size}px`,
         float: 'left',
         textAlign: 'right'
       } : {
+        width: `${size}px`,
         float: 'right',
         textAlign: 'left'
       }
@@ -46,7 +51,8 @@ const ArrowSlider = (props) => {
 
 ArrowSlider.propTypes = {
   txt: PropTypes.string,
-  side: PropTypes.string
+  side: PropTypes.string,
+  size: PropTypes.number
 };
 
 export default ArrowSlider;

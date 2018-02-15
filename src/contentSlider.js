@@ -3,47 +3,105 @@ import './css/content-slider.css';
 import store from './store/store';
 import logo from './img/logo_transparent.png';
 import ArrowSlider from './arrowSlider';
+import { typeOfActions } from './store/actions';
 
 class ContentSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      index: 0
+      desktopPanel: 0,
+      mobilPanel: 1
     };
   }
+  componentDidMount() {
+    store.on(
+      typeOfActions.SWITCH_PANEL,
+      () => {
+        const { switchSide, viewport } = store;
+        const { desktopPanel, mobilPanel } = this.state;
+        if (viewport.width > 850) {
+          this.setState({
+            desktopPanel: switchSide === 'left'
+              ? desktopPanel - 1
+              : desktopPanel + 1
+          });
+        } else {
+          this.setState({
+            mobilPanel: switchSide === 'left'
+            ? mobilPanel - 1
+            : mobilPanel + 1
+          });
+        }
+      }
+    );
+  }
   render() {
+    console.log(store.mobile);
+    const { desktopPanel, mobilPanel } = this.state;
+    const { width } = store.viewport;
     const propsLogo = {
       src: logo,
       width: '100%',
       height: '100%'
     };
-    const width = store.viewport.width;
-    if (store.viewport.width > 850) {
-      return <div className="content-slider" style={{width: width*2}}>
-        <section style={{width}}>
-          <div style={{width}} className="container-arrow-slider">
-            <ArrowSlider side="right" txt="Recherchez votre séjour" />
-          </div>
-          <div className="container-first-section">
-            <div className="container-logo">
-              <div className="container-logo-img">
-                <img alt="" {...propsLogo} />
+    console.log(this.state);
+
+    if (width > 850) {
+      return <div className="frame-slider" style={{width}}>
+        <div className="container-section" style={{width: width*3, marginLeft: - desktopPanel * width}}>
+          <section style={{width}}>
+            <div className="main-section">
+              <div className="container-logo">
+                <div className="container-logo-img">
+                  <img alt="" {...propsLogo} />
+                </div>
+                <h1><span>Leader</span> de l´hôtellerie de plein air en corse</h1>
+                <div className="div-border" />
               </div>
-              <h1><span>Leader</span> de l´hôtellerie de plein air en corse</h1>
-              <div className="div-border" />
             </div>
-          </div>
-        </section>
-        <section style={{width}}>
-          <div className="container-arrow-slider">
-            <ArrowSlider side="left" txt="Page d'accueil" />
-          </div>
-          <div style={{background: 'black'}} />
-        </section>
+            <div style={{width}} className="container-arrow-slider">
+              <ArrowSlider side="right" size="130" txt="Recherchez votre séjour" />
+            </div>
+          </section>
+          <section style={{width, height: '100vh'}}>
+            <div style={{width}} className="container-arrow-slider">
+              <ArrowSlider side="left" size="100" txt="Page d'accueil" />
+            </div>
+          </section>
+        </div>
       </div>;
     } else {
-      return <div />;
+      return <div className="frame-slider" style={{width}}>
+        <div className="container-section" style={{width: width*3, marginLeft: - mobilPanel * width}}>
+          <section style={{width}}>
+            <div style={{width}} className="container-arrow-slider mob">
+              <ArrowSlider side="right" size="85" txt="Page d'accueil" />
+            </div>
+          </section>
+          <section style={{width}}>
+            <div className="main-section">
+              <div className="container-logo">
+                <div className="container-logo-img">
+                  <img alt="" {...propsLogo} />
+                </div>
+                <h1><span>Leader</span> de l´hôtellerie de plein air en corse</h1>
+                <div className="div-border" />
+              </div>
+            </div>
+            <div style={{width}} className="container-arrow-slider mob">
+              <ArrowSlider side="left" size="110" txt="Recherchez votre séjour" />
+              <ArrowSlider side="right" size="110" txt="Carte des destinations" />
+            </div>
+          </section>
+          <section style={{width, height: '100vh'}}>
+            <div style={{width}} className="container-arrow-slider mob">
+              <ArrowSlider side="left" size="85" txt="Page d'accueil" />
+            </div>
+          </section>
+        </div>
+      </div>;
     }
+
   }
 }
 
