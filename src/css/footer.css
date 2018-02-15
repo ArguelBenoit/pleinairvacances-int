@@ -17,7 +17,9 @@
   background: linear-gradient(-45deg, #eee, #fff);
 }
 .main-footer .section2 {
-  background: #eee;
+  background: #ddd;
+  padding-top: 70px;
+  padding-bottom: 20px;
 }
 .main-footer .section1 {
   padding-top: 70px;
@@ -94,4 +96,8 @@
   color: #555;
   font-weight: 900;
   text-decoration: none;
+}
+
+.main-footer .section4 {
+  padding-top: 40px;
 }

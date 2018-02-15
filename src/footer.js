@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/footer.css';
-// import store from './store/store';
-// import { menu } from './menu';
+import footer1 from './img/footer1.png';
+import footer2 from './img/footer2.png';
 
 
 const Footer = () => {
@@ -99,13 +99,22 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="row two">
+        <div className="row two" style={{paddingTop: '70px'}}>
           <a href="">© Plein Air Vacances - Plan du site - Mentions Légales</a>
         </div>
       </div>
     </section>
-    <section>
-
+    <section className="section4">
+      <div className="container">
+        <div className="row">
+          <div className="six columns">
+            <img src={footer1} width="100%"/>
+          </div>
+          <div className="six columns">
+            <img src={footer2}  width="100%"/>
+          </div>
+        </div>
+      </div>
     </section>
   </div>;
 };
