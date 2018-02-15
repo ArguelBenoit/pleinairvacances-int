@@ -40,6 +40,7 @@ class BackgroundSlider extends Component {
   }
   render() {
     const { index, bg } = this.state;
+    // const { width, height } = store.viewport;
     return <div className="slider">
       {bg.map( (el, i) => {
         const propsImg = {
@@ -49,7 +50,8 @@ class BackgroundSlider extends Component {
             opacity: i > index
               ? 0
               : 1,
-            background: `url( ${bg[i]} ) center center fixed` // with RestApi use absolute url.
+            background: `url( ${bg[i]} ) fixed`,
+            backgroundSize: 'cover'
           }
         };
         return <div {...propsImg} />;
