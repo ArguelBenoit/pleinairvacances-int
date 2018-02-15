@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Header from './header';
 import BackgroundSlider from './backgroundSlider';
-import FakeSection from './fakeSection.js';
 import { Actions, typeOfActions } from './store/actions.js';
 import store from './store/store';
 import LeftPanel from './leftPanel';
 import ContentSlider from './contentSlider';
+import Section2 from './section2';
+import Section3 from './section3';
+import Section4 from './section4';
+import Footer from './footer';
 
 
 class App extends Component {
@@ -33,7 +36,10 @@ class App extends Component {
       <Header />
       <BackgroundSlider />
       <ContentSlider />
-      <FakeSection />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Footer />
       {store.viewport.width < 1360
         ? <LeftPanel />
         : ''

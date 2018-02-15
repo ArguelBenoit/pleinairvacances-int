@@ -19,7 +19,7 @@ class ContentSlider extends Component {
     store.on(
       typeOfActions.SWITCH_PANEL,
       () => {
-        const { switchSide, viewport, mobile } = store;
+        const { switchSide, viewport } = store;
         const { desktopPanel, mobilPanel } = this.state;
         if (viewport.width > 850) { // desktop
           this.setState({
