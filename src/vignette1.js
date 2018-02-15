@@ -5,11 +5,11 @@ import './css/vignette1.css';
 
 const Vignette1 = (props) => {
   return <div className="row vignette1">
-    <img src={props.src} />
-    <div className="txt">
+    <div className="title">
       {props.txt1}
-      <br />
-      <br />
+    </div>
+    <img src={props.src} />
+    <div className="info">
       {props.txt2}
     </div>
     <div className="link">
@@ -23,6 +23,7 @@ Vignette1.propTypes = {
   txt1: PropTypes.string,
   txt2: PropTypes.string,
   src: PropTypes.string
+  // price: PropTypes.string
 };
 
 export default Vignette1;

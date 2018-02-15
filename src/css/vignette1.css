@@ -4,21 +4,28 @@
   box-shadow: 0 0 4px rgba(100,100,100,0.15);
   background: white;
   cursor: pointer;
-  font-weight: 900;
   padding: 10px;
+  font-size: 15px;
 }
 .vignette1 i {
   margin-right: 10px;
   color: #444;
 }
-.vignette1 .txt {
+.vignette1 .title {
   font-weight: 600;
-  padding: 10px 0;
-  font-size: 12px;
+  padding: 10px;
   color: #555;
-
+  background: #eee;
+}
+.vignette1 .info {
+  /* font-weight: 600; */
+  padding: 10px 0;
+  margin-bottom: 8px;
+  color: #777;
+  border-bottom: 1px dashed #ddd;
 }
 .vignette1 .link {
+  font-weight: 900;
   font-size: 20px;
   color: #ffa065;
 }
