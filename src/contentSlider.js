@@ -113,8 +113,8 @@ class ContentSlider extends Component {
               </div>
             </div>
             <div style={{width}} className="container-arrow-slider mob">
-              <ArrowSlider side="left" size="110" txt="Recherchez votre séjour" />
-              <ArrowSlider side="right" size="110" txt="Carte des destinations" />
+              <ArrowSlider side="left" size="90" txt="Recherchez votre séjour" />
+              <ArrowSlider side="right" size="90" txt="Carte des destinations" />
             </div>
           </section>
           <section style={{width, height: '100vh'}}>

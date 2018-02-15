@@ -12,3 +12,6 @@
 .left-panel.actived {
   left: 0px;
 }
+.left-panel ul.main-menu {
+  margin-top: 30px;
+}

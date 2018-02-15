@@ -1,6 +1,20 @@
 
 .section4 {
-  min-height: 100vh;
   width: 100%;
   background: linear-gradient(-45deg, #ffa065, #ff8a42);
+}
+.section4 .line i {
+  margin-right: 20px;
+  font-size: 25px;
+  color: #555
+}
+.section4 .main-row {
+  margin-top: 60px;
+  margin-bottom: 20px
+}
+.section4 .line {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
 }

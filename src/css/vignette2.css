@@ -1,0 +1,31 @@
+
+.vignette2 {
+  margin-bottom: 35px;
+  box-shadow: 0 0 4px rgba(100,100,100,0.15);
+  background: white;
+  padding: 10px;
+  cursor: pointer;
+}
+.vignette2 img {
+  width: 100%;
+}
+
+.vignette2 .container-i {
+  width: 70px;
+  height: 70px;
+  background: #eee;
+  border-radius: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 35px;
+  transform: translateY(-40px);
+}
+.vignette2 .container-i i {
+  padding-top: 16px;
+}
+.txt-title {
+  transform: translateY(-20px);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+}

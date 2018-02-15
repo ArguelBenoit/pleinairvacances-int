@@ -3,4 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
   overflow-x: hidden;
+  font-family: 'Muli';
+  line-height: inherit;
+}
+
+body ul {
+  margin: 0 0;
+}
+body ul li {
+  margin-bottom: 0px;
 }

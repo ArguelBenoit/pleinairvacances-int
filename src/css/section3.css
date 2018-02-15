@@ -1,6 +1,9 @@
 
 .section3 {
   width: 100%;
-  min-height: 100vh;
   background: linear-gradient(-45deg, #63d3d8, #00c3be);
+  display: inline-block;
+}
+.section3 .main-row {
+  margin-top: 50px;
 }

@@ -19,7 +19,7 @@
 .container-arrow-slider {
   position: absolute;
   top: 48vh;
-  font-size: 18px;
+  font-size: 17px;
 }
 .container-arrow-slider.mob {
   top: inherit;
@@ -78,7 +78,7 @@
 .main-section h1 {
   text-align: center;
   color: white;
-  font-size: 'muli';
+  font-size: 30px;
   font-weight: 700;
   text-shadow: 0 0 2px rgba(0,0,0,0.4);
   padding: 0 15px;

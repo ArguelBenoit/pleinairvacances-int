@@ -26,7 +26,7 @@ class LiSubMenu2 extends Component {
     const propsSubUl = {
       style: open
         ? {
-          height: 10 + sub.length*27 + 14,
+          height: 10 + sub.length*27 + 28,
           opacity: 1
         } : {
           height: 0,
