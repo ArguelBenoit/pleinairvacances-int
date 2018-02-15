@@ -1,6 +1,97 @@
 
 .main-footer {
-  min-height: 100vh;
   width: 100%;
+}
+.main-footer .section0 {
+  padding: 50px 0;
+}
+.main-footer .section0 .row {
+  text-align: center;
+}
+.main-footer .section0 a {
+  font-size: 30px;
+  color: #555;
+  text-decoration: none;
+}
+.main-footer .section1 {
   background: linear-gradient(-45deg, #eee, #fff);
+}
+.main-footer .section2 {
+  background: #eee;
+}
+.main-footer .section1 {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.main-footer p.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.main-footer p.title.blue {
+  color: #3ac9ff;
+}
+.main-footer p.title.orange {
+  color: #ff8d00;
+}
+.main-footer .section1 ul li {
+  float: left;
+  list-style: none;
+  color: black;
+  font-size: 25px;
+  margin-right: 15px;
+  color: black;
+}
+.main-footer .section1 ul li a {
+  color: black
+}
+
+.main-footer .button-newsletter {
+  display: flex;
+}
+.main-footer .button-newsletter button,
+.main-footer .button-newsletter input {
+  float: left;
+  border: none;
+  padding: 0 0;
+  height: 34px;
+}
+.main-footer .button-newsletter button {
+  width: 20%;
+  /* color: white; */
+  background: white;
+  border-radius: 0;
+  font-size: 18px;
+}
+.main-footer .button-newsletter input {
+  width: 80%;
+}
+
+
+
+.main-footer .section2 ul li a {
+  color: #555;
+  text-decoration: none
+}
+.main-footer .section2 ul li.main a {
+  color: #3ac9ff;
+  font-size: 18px;
+}
+.main-footer .section2 ul {
+  padding: 10px 0;
+}
+.main-footer .section2 ul li {
+  list-style: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 900;
+  margin-right: 15px;
+  color: black;
+  padding: 4px 0;
+}
+
+.main-footer .section2 .row.two a {
+  padding-top: 20px;
+  color: #555;
+  font-weight: 900;
+  text-decoration: none;
 }

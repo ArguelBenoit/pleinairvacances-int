@@ -8,7 +8,7 @@ const Vignette1 = (props) => {
     <div className="title">
       {props.txt1}
     </div>
-    <img src={props.src} />
+    <img src={props.src} alt="" />
     <div className="info">
       {props.txt2}
     </div>
