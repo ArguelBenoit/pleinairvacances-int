@@ -3,6 +3,7 @@ import H1 from './h1';
 import './css/section3.css';
 import Vignette2 from './vignette2';
 import store from './store/store';
+import NavigationArrow from './navigationArrow';
 
 import background1 from './img/vignette2/1.jpg';
 import background2 from './img/vignette2/2.jpg';
@@ -42,13 +43,21 @@ const propsVignette = [
 const Section3 = () => {
   const propsSection = {
     className: 'section3',
+    id: 'section3',
     style: {
       padding: store.viewport.width > 850
         ? '100px 0 150px 0'
         : '0 0'
     }
   };
+  const propsNaviguationArrow = {
+    color1: '#000',
+    color2: '#fff',
+    link1: '#section3',
+    link2: '#section2'
+  };
   return <section {...propsSection}>
+    <NavigationArrow {...propsNaviguationArrow} />
     <div className="container main-container">
       <H1 txt={'NOS THÉMATIQUES'} color={'white'} border={'orange'}/>
       <div className="row main-row">

@@ -1,0 +1,10 @@
+.container-naviguation {
+  width: 28px;
+  height: 80px;
+  margin: auto;
+  transform: translateY(-138px);
+}
+.container-naviguation a {
+  float: left;
+  font-size: 30px
+}

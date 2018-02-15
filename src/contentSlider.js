@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/content-slider.css';
 import store from './store/store';
-import logo from './img/logo_transparent.png';
+import logo from './img/logo_transparent_shadow.png';
 import ArrowSlider from './arrowSlider';
 import { Actions, typeOfActions } from './store/actions';
 
@@ -68,7 +68,7 @@ class ContentSlider extends Component {
           ? <div className="timer-desktop">{`${time}s`}</div>
           : ''
         }
-        <div className="container-section" style={{width: width*2, marginLeft: - desktopPanel * width}}>
+        <div className="container-section" id="section1" style={{width: width*2, marginLeft: - desktopPanel * width}}>
           <section style={{width}}>
             <div className="main-section">
               <div className="container-logo">

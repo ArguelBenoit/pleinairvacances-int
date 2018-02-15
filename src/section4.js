@@ -2,7 +2,7 @@ import React from 'react';
 import './css/section4.css';
 import H1 from './h1';
 import store from './store/store';
-
+import NavigationArrow from './navigationArrow';
 
 const reasons = [
   {
@@ -26,13 +26,21 @@ const reasons = [
 const Section4 = () => {
   const propsSection = {
     className: 'section4',
+    id: 'section4',
     style: {
       padding: store.viewport.width > 850
         ? '100px 0 150px 0'
         : '0 0'
     }
   };
+  const propsNaviguationArrow = {
+    color1: '#fff',
+    color2: '#fff',
+    link1: '#section4',
+    link2: '#section3'
+  };
   return <section {...propsSection} >
+    <NavigationArrow {...propsNaviguationArrow} />
     <div className="container">
       <H1 txt={'5 BONNES RAISONS DE CHOISIR PLEIN AIR VACANCES'} color={'white'} border={'blue'}/>
       <div className="row main-row">
