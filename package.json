@@ -2,6 +2,7 @@
   "name": "pleinairvacances-int",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://arguelbenoit.github.io/pleinairvacances-int",
   "dependencies": {
     "debounce": "^1.1.0",
     "events": "^2.0.0",
