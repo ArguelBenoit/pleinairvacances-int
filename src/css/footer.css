@@ -15,15 +15,15 @@
 }
 .main-footer .section1 {
   background: linear-gradient(-45deg, #eee, #fff);
+  padding-top: 70px;
+  padding-bottom: 140px;
+}
+.main-footer .section1 .row .columns.three{
+  padding: 20px 0;
 }
 .main-footer .section2 {
   background: #ddd;
-  padding-top: 70px;
   padding-bottom: 20px;
-}
-.main-footer .section1 {
-  padding-top: 70px;
-  padding-bottom: 70px;
 }
 .main-footer p.title {
   font-size: 18px;
@@ -69,6 +69,17 @@
 }
 
 
+.main-footer .section2 .container-logo {
+  width: 140px;
+  height: 140px;
+  margin: auto;
+  background: white;
+  border-radius: 50%;
+  transform: translateY(-70px);
+}
+.main-footer .section2 .container-logo img {
+  padding-top: 25px;
+}
 
 .main-footer .section2 ul li a {
   color: #555;
@@ -99,5 +110,6 @@
 }
 
 .main-footer .section4 {
+  background: white;
   padding-top: 40px;
 }

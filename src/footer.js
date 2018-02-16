@@ -2,6 +2,7 @@ import React from 'react';
 import './css/footer.css';
 import footer1 from './img/footer1.png';
 import footer2 from './img/footer2.png';
+import logo from './img/logo_transparent.png';
 
 
 const Footer = () => {
@@ -55,6 +56,9 @@ const Footer = () => {
       </div>
     </section>
     <section className="section2">
+      <div className="container-logo">
+        <img src={logo} width="140px"/>
+      </div>
       <div className="container">
         <div className="row">
           <div className="three columns">
