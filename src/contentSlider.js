@@ -4,6 +4,8 @@ import store from './store/store';
 import logo from './img/logo_transparent_shadow.png';
 import ArrowSlider from './arrowSlider';
 import { Actions, typeOfActions } from './store/actions';
+import Map from './map.js';
+import Research from './research.js';
 
 class ContentSlider extends Component {
   constructor(props) {
@@ -54,13 +56,11 @@ class ContentSlider extends Component {
   render() {
     const { desktopPanel, mobilPanel, time, timer } = this.state;
     const { width } = store.viewport;
-    // const { mobile } = store;
     const propsLogo = {
       src: logo,
       width: '100%',
       height: '100%'
     };
-    // console.log(this.state);
 
     if (width > 850) {
       return <div className="frame-slider" style={{width}}>
@@ -84,8 +84,10 @@ class ContentSlider extends Component {
             </div>
           </section>
           <section style={{width, height: '100vh'}}>
+            <Map />
+            <Research />
             <div style={{width}} className="container-arrow-slider">
-              <ArrowSlider side="left" size="100" txt="Page d'accueil" />
+              <ArrowSlider side="left" size="0" txt="" />
             </div>
           </section>
         </div>
@@ -98,6 +100,7 @@ class ContentSlider extends Component {
         }
         <div className="container-section" style={{width: width*3, marginLeft: - mobilPanel * width}}>
           <section style={{width}}>
+            <Research />
             <div style={{width}} className="container-arrow-slider mob">
               <ArrowSlider side="right" size="70" txt="Page d'accueil" />
             </div>
@@ -118,6 +121,7 @@ class ContentSlider extends Component {
             </div>
           </section>
           <section style={{width, height: '100vh'}}>
+            <Map />
             <div style={{width}} className="container-arrow-slider mob">
               <ArrowSlider side="left" size="70" txt="Page d'accueil" />
             </div>

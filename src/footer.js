@@ -57,7 +57,7 @@ const Footer = () => {
     </section>
     <section className="section2">
       <div className="container-logo">
-        <img src={logo} width="140px"/>
+        <img src={logo} width="140px" alt=""/>
       </div>
       <div className="container">
         <div className="row">
@@ -112,10 +112,10 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="six columns">
-            <img src={footer1} width="100%"/>
+            <img src={footer1} width="100%" alt="" />
           </div>
           <div className="six columns">
-            <img src={footer2}  width="100%"/>
+            <img src={footer2}  width="100%" alt="" />
           </div>
         </div>
       </div>

@@ -7,10 +7,28 @@ body {
   line-height: inherit;
 }
 html { scroll-behavior: smooth; }
+body ul { margin: 0 0 }
+body ul li { margin-bottom: 0px }
 
-body ul {
+
+/*for overide mapbox*/
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib { display: none; }
+
+
+/*for overide skeleton*/
+select.my-select {
+  background: rgba(255,255,255,0.30);
+  border: 1px solid #aaa;
+  border-radius: 1px;
+}
+input.my-button {
+  border-radius: 1px;
+  background-color: #ff8d00 !important;
+  border: none;
   margin: 0 0;
 }
-body ul li {
-  margin-bottom: 0px;
+form.my-form {
+  padding: 0 0;
+  margin: 0 0;
+  margin-top: 28px;
 }
