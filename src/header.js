@@ -50,7 +50,7 @@ class Header extends Component {
     const propsHeaderBig = {
       className: 'header-big',
       style: {
-        background: scroll < 300 ? 'transparent' : 'rgba(255,255,255,0.8)',
+        background: scroll < 300 ? 'transparent' : '#eee',
         width: scroll < 300 ? viewport.width + 170 : viewport.width,
         left: scroll < 300 ? -170 : 0
       }
@@ -58,7 +58,7 @@ class Header extends Component {
     const propsHeaderSmall = {
       className: 'header-small',
       style: {
-        background: scroll < 150 || menuActived ? 'transparent' : 'rgba(255,255,255,0.8)',
+        background: scroll < 150 || menuActived ? 'transparent' : '#eee',
         width: scroll < 150 ? viewport.width + 105 : viewport.width,
         left: menuActived ? '280px' : 0
       }

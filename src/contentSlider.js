@@ -4,7 +4,7 @@ import store from './store/store';
 import logo from './img/logo_transparent_shadow.png';
 import ArrowSlider from './arrowSlider';
 import { Actions, typeOfActions } from './store/actions';
-import Map from './map.js';
+import BlueMap from './blueMap.js';
 import Research from './research.js';
 
 class ContentSlider extends Component {
@@ -84,7 +84,7 @@ class ContentSlider extends Component {
             </div>
           </section>
           <section style={{width, height: '100vh'}}>
-            <Map />
+            <BlueMap />
             <Research />
             <div style={{width}} className="container-arrow-slider">
               <ArrowSlider side="left" size="0" txt="" />
@@ -121,7 +121,7 @@ class ContentSlider extends Component {
             </div>
           </section>
           <section style={{width, height: '100vh'}}>
-            <Map />
+            <BlueMap />
             <div style={{width}} className="container-arrow-slider mob">
               <ArrowSlider side="left" size="70" txt="Page d'accueil" />
             </div>

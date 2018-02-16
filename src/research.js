@@ -11,7 +11,9 @@ const Research = () => {
       height: 'auto',
       marginTop: - height + 230,
       background: 'rgba(255,255,255,0.35)',
-      padding: '0 30px 30px 30px'
+      padding: '0 30px 30px 30px',
+      position: 'absolute',
+      zIndex: 1
     } : {
       width: width - 100,
       margin: 'auto',
